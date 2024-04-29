@@ -1,11 +1,11 @@
 from django.urls import path, include
 from rest_framework import routers
-from .views import UserViewset, GroupViewset
+from .views import UserViewset
 
 router = routers.DefaultRouter()
 router.register(r'users',UserViewset)
-router.register(r'groups',GroupViewset)
 urlpatterns = [
     path('',include(router.urls)),
-    path('user/',UserViewset.as_view({'get':'list'}))
+    path('user/',UserViewset.as_view({'get':'list','post':'update'})),
+    path('user/<int:pk>/',UserViewset.as_view({'get':'list'}))
 ]
