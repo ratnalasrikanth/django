@@ -3,12 +3,12 @@ from django.shortcuts import render
 # Create your views here.
 from .models import CustomUser
 from rest_framework import viewsets,permissions
-from .serializers import UserSerializer
+from .serializers import SignupSerializer
 
 
 class UserViewset(viewsets.ModelViewSet):
     queryset = CustomUser.objects.all()
-    serializer_class = UserSerializer
+    serializer_class = SignupSerializer
     # permission_classes = [permissions.IsAuthenticated]
 
 
