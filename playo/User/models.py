@@ -50,7 +50,7 @@ class CustomUser(AbstractBaseUser):
     is_active = models.BooleanField(default=True)
     staff = models.BooleanField(default=False) # a admin user; non super-user
     admin = models.BooleanField(default=False)
-    date_of_birth = models.DateField(blank=True)
+    date_of_birth = models.DateField(blank=True,null=True,default=None)
     address = models.CharField(max_length=50,blank=True)
     bio_info = models.TextField(max_length=500,blank=True)
 
