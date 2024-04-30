@@ -6,6 +6,7 @@ from django.contrib.auth.password_validation import validate_password
         
 
 class SignupSerializer(serializers.ModelSerializer):
+    password = serializers.CharField(style={'input_type': 'password'})
     class Meta:
         model = CustomUser
         fields = ['email','password']
